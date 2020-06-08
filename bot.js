@@ -12,7 +12,7 @@ const { Client, MessageEmbed } = require('discord.js');
 const client = new Client({ partials: ['MESSAGE', 'REACTION']});
 
 // Set prefix
-const prefix = "-";
+const prefix = "+";
 
 // Add it in the future 
 const ownerID = '265894345012412418';
