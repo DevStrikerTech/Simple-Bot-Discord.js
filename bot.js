@@ -2,6 +2,9 @@
 require("dotenv").config();
 require('events').EventEmitter.prototype._maxListeners = 10000;
 
+const fs = require('fs'); // fs is the built-in Node.js file system module.
+const guilds = require('./guilds.json'); // This path may vary.
+
 // Import translator api
 const translator = require("@vitalets/google-translate-api");
 
@@ -17,6 +20,25 @@ const prefix = "+";
 // Add it in the future 
 const ownerID = '265894345012412418';
 
+// Message Count
+client.on('message', message => {
+// If the author is NOT a bot...
+  if (!message.author.bot) {
+      if (message.channel.id === '699974293567832085') {
+            // If the guild isn't in the JSON file yet, set it up.
+            if (!guilds[message.author.tag]) guilds[message.author.tag] = { messageCount: 1 };
+            // Otherwise, add one to the guild's message count.
+            else guilds[message.author.tag].messageCount++;
+
+            // Write the data back to the JSON file, logging any errors to the console.
+            try {
+            fs.writeFileSync('./guilds.json', JSON.stringify(guilds)); // Again, path may vary.
+            } catch(err) {
+            console.error(err);
+            }
+        }
+  }
+});
 
 // Starboard add reaction
 client.on('messageReactionAdd', async (reaction, user) => {
