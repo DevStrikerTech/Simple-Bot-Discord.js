@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 
 
 exports.run = (client, messsage, args) => {
-    if (messsage.channel.id === '720108436829765682') {
+    if (messsage.channel.id === '720621595588165692') {
         fs.readFile('guilds.json', (err, data) => {
             if (err) throw err;
             let newString = JSON.parse(data);
