@@ -16,13 +16,13 @@ const client = new Client({ partials: ['MESSAGE', 'REACTION']});
 const prefix = "+";
 
 // Add it in the future 
-const ownerID = '265894345012412418';
+const ownerID = 'ID REQUIRED HERE';
 
 // Message Count
 client.on('message', message => {
 // If the author is NOT a bot...
   if (!message.author.bot) {
-      if (message.channel.id === '699974293567832085') {
+      if (message.channel.id === 'ID REQUIRED HERE') {
             // If the guild isn't in the JSON file yet, set it up.
             if (!guilds[message.author.tag]) guilds[message.author.tag] = { messageCount: 1 };
             // Otherwise, add one to the guild's message count.
@@ -176,27 +176,27 @@ client.on('messageReactionRemove', async (reaction, user) => {
 
 client.on('message', message => {
    // Delete message for specific channel
-   if (message.channel.id === '711273912708890674') {
-    if (!message.content.startsWith('.') && message.author.id !== '607565641242771477') {
+   if (message.channel.id === 'ID REQUIRED HERE') {
+    if (!message.content.startsWith('.') && message.author.id !== 'ID REQUIRED HERE') {
       message.delete();
     }
   }
 
   // Add number to member voice channel
   client.on('guildMemberAdd', member => {
-    let myServer =  client.guilds.cache.get('699963943082524705');
+    let myServer =  client.guilds.cache.get('ID REQUIRED HERE');
     let memberCount = myServer.memberCount;
 
-    let memberCounterChannel = myServer.channels.cache.get('717388534561898597');
+    let memberCounterChannel = myServer.channels.cache.get('ID REQUIRED HERE');
     memberCounterChannel.setName('Members: ' + memberCount)
   });
 
   // Remove number from member voice channel
   client.on('guildMemberRemove', member => {
-    let myServer =  client.guilds.cache.get('699963943082524705');
+    let myServer =  client.guilds.cache.get('ID REQUIRED HERE');
     let memberCount = myServer.memberCount;
 
-    let memberCounterChannel = myServer.channels.cache.get('717388534561898597');
+    let memberCounterChannel = myServer.channels.cache.get('ID REQUIRED HERE');
     memberCounterChannel.setName('Members: ' + memberCount)
   });
   
@@ -231,10 +231,10 @@ client.on('message', message => {
 // Ready event
 client.on('ready', () => {
     console.log('Bot is online!')
-    let myServer =  client.guilds.cache.get('699963943082524705');
+    let myServer =  client.guilds.cache.get('ID REQUIRED HERE');
     let memberCount = myServer.memberCount;
 
-    let memberCounterChannel = myServer.channels.cache.get('717388534561898597');
+    let memberCounterChannel = myServer.channels.cache.get('ID REQUIRED HERE');
     memberCounterChannel.setName('Members: ' + memberCount)
 });
 
