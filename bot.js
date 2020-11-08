@@ -242,4 +242,4 @@ client.on('ready', () => {
 
 
 // Discord login
-client.login(process.env.TOKEN);
+client.login('TOKEN HERE');
