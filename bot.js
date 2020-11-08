@@ -1,5 +1,3 @@
-// Import discord token
-require("dotenv").config();
 require('events').EventEmitter.prototype._maxListeners = 10000;
 
 const fs = require('fs'); // fs is the built-in Node.js file system module.
